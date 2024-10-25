@@ -1,0 +1,37 @@
+header {
+    position: fixed; /* Fixa o cabeçalho na parte superior da página */
+    top: 0; /* Alinha no topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total da tela */
+    background-color: rgb(240, 240, 240); 
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+nav ul {
+    list-style: none; /* Remove as bolinhas da lista */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove preenchimento */
+    display: flex; /* Alinha os itens na horizontal */
+}
+
+nav ul li {
+    margin-right: 20px; /* Espaçamento entre os links */
+    
+}
+
+nav a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: black; /* Cor do texto */
+    font-weight: bold; /* Negrito (opcional) */
+    transition: color 0.3s; /* Efeito de transição na mudança de cor */
+    border-left: 1px solid #007bff;
+    margin-left: 10px;
+}
+nav a:first-child {
+    border-left: none; /* Remove a borda do primeiro link */
+}
+
+nav a:hover {
+    color: #007bff; /* Cor ao passar o mouse (opcional) */
+}
