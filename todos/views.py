@@ -15,6 +15,7 @@ def index(request):
 
 class FornecedorListView(ListView):
     model = Fornecedor
+    template_name = "todos/fornecedor_list.html"
 
 
 class FornecedorCreateView(CreateView):
@@ -27,9 +28,10 @@ class FornecedorCreateView(CreateView):
 class FornecedorUpdateView(UpdateView):
     model = Fornecedor
     fields = "__all__"
-    success_url = reverse_lazy("todos:index")
+    success_url = reverse_lazy("fornecedor_list")
 
 
 class FornecedorDeleteView(DeleteView):
     model = Fornecedor
-    success_url = reverse_lazy("todos:index")
+    template_name = "todos/fornecedor_confirm_delete.html"
+    success_url = reverse_lazy("fornecedor_list")

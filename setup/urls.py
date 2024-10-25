@@ -27,8 +27,8 @@ from todos.views import (
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index, name="index"),
-    path("fornecedores", FornecedorListView.as_view(), name="fornecedores"),
+    path("fornecedores", FornecedorListView.as_view(), name="fornecedor_list"),
     path('create', FornecedorCreateView.as_view(), name='fornecedor_form'),
-    path('atualizar/<int:pk>/', FornecedorUpdateView.as_view(), name="atualizar"),
-    path('deletar/<int:pk>/', FornecedorDeleteView.as_view(), name="deletar"),
+    path('atualizar/<int:pk>/', FornecedorUpdateView.as_view(), name="fornecedor_update"),
+    path('deletar/<int:pk>/', FornecedorDeleteView.as_view(), name="fornecedor_delete"),
 ]

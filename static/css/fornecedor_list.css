@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.mouse a{
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Quando o mouse passar sobre o elemento .mouse */
+.mouse a:hover {
+    color: #a80000;
+     /* Nova cor de fundo quando passar o mouse */
+
+}
+

@@ -1,0 +1,60 @@
+{% extends 'todos/base.html' %}
+
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" text="text/css" href="{% static 'css/fornecedor_list.css' %}">
+    <h1>Lista de Fornecedores</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>CNPJ</th>
+                <th>Endereço</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+                <th>UF</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Tipo de Produto</th>
+                <th>Sobre Produto</th>
+                <th>Transportadora Principal</th>
+                <th>Custo Médio de Compra</th>
+                <th>Outras Informações</th>
+                <th>Data de Cadastro</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fornecedor in fornecedor_list %}
+            <tr>
+                <th scope="row">{{ fornecedor.id }}</th>
+                <td>{{ fornecedor.nome }}</td>
+                <td>{{ fornecedor.cnpj }}</td>
+                <td>{{ fornecedor.endereco }}</td>
+                <td>{{ fornecedor.bairro }}</td>
+                <td>{{ fornecedor.cidade }}</td>
+                <td>{{ fornecedor.uf }}</td>
+                <td>{{ fornecedor.telefone }}</td>
+                <td>{{ fornecedor.email }}</td>
+                <td>{{ fornecedor.tipo_de_produto }}</td>
+                <td>{{ fornecedor.sobre_produto }}</td>
+                <td>{{ fornecedor.transportadora_principal }}</td>
+                <td>{{ fornecedor.custo_medio_de_compra }}</td>
+                <td>{{ fornecedor.outras_informacoes }}</td>
+                <td>{{ fornecedor.data_cadastro }}</td>
+                <td>
+                    <span class="mouse">
+                    <a href="{% url 'fornecedor_update' fornecedor.id %} ">Alterar</a> <br><br>
+                    <a href="{% url 'fornecedor_delete' fornecedor.id %}" >Excluir</a>
+                        </span>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="15">Nenhum fornecedor cadastrado.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
