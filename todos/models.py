@@ -32,7 +32,7 @@ class Fornecedor(models.Model):
         ('SP', 'São Paulo'),
         ('SE', 'Sergipe'),
         ('TO', 'Tocantins'),
-    ]
+    ] #No UF_Choices, primeira parte é como salva, segunda parte é como aparece pro usuario
     nome = models.CharField(max_length=200, blank=False, null=False)
     cnpj = models.CharField(max_length=14, blank=False, null=False, validators=[MinLengthValidator(14)])
     endereco = models.CharField(max_length=500, blank=False, null=False)

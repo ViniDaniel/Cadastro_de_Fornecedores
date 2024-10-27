@@ -19,7 +19,7 @@ class FornecedorListView(ListView):
     template_name = "todos/fornecedor_list.html"
     
     def get_queryset(self):
-        query = self.request.GET.get("q")  # 'q' é o nome do parâmetro de pesquisa
+        query = self.request.GET.get("q")  
         queryset = super().get_queryset()
 
         if query:
