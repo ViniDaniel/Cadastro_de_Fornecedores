@@ -6,6 +6,7 @@ from django.views.generic import (
     UpdateView, 
     DeleteView)
 from django.urls import reverse_lazy
+from django.db.models import Q
 
 
 # Create your views here.
@@ -16,7 +17,20 @@ def index(request):
 class FornecedorListView(ListView):
     model = Fornecedor
     template_name = "todos/fornecedor_list.html"
+    
+    def get_queryset(self):
+        query = self.request.GET.get("q")  # 'q' é o nome do parâmetro de pesquisa
+        queryset = super().get_queryset()
 
+        if query:
+            queryset = queryset.filter(
+                Q(nome__icontains=query) |
+                Q(cnpj__icontains=query) |
+                Q(endereco__icontains=query) |
+                Q(cidade__icontains=query) |
+                Q(telefone__icontains=query)
+            )
+        return queryset
 
 class FornecedorCreateView(CreateView):
     model = Fornecedor

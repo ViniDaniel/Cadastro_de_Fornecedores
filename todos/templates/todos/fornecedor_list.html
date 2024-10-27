@@ -4,6 +4,12 @@
 {% load static %}
     <link rel="stylesheet" text="text/css" href="{% static 'css/fornecedor_list.css' %}">
     <h1>Lista de Fornecedores</h1>
+
+    <form method="GET" action="{% url 'fornecedor_list' %}" style="text-align: right; margin-bottom: 20px;">
+        <input type="text" name="q" placeholder="Pesquisar fornecedor..." value="{{ request.GET.q }}" style="font-size: 18px;">
+        <button type="submit" style="font-size: 18px;">Pesquisar</button>
+    </form>
+<br>
     <table border="1">
         <thead>
             <tr>
