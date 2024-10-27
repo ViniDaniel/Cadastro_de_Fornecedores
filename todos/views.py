@@ -23,12 +23,16 @@ class FornecedorCreateView(CreateView):
     fields = "__all__"
     template_name = "todos/fornecedor_form.html"
     success_url = reverse_lazy("index")
+    extra_context = {'titulo': 'Cadastrar Fornecedor'}
+
 
 
 class FornecedorUpdateView(UpdateView):
     model = Fornecedor
     fields = "__all__"
     success_url = reverse_lazy("fornecedor_list")
+    extra_context = {'titulo': 'Atualizar Fornecedor'}
+
 
 
 class FornecedorDeleteView(DeleteView):

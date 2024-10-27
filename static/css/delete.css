@@ -14,3 +14,8 @@
     text-decoration: none;
     transition: color 0.3s;
 }
+
+
+.nome {
+    color: rgb(134, 0, 0);
+}

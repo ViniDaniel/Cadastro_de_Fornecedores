@@ -5,12 +5,11 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/delete.css' %}">
 
-<h1>Deseja excluir o Fornecedor?</h1>
+<h1>Deseja excluir o Fornecedor <span class="nome">{{object.nome}}</span>?</h1>
 
 
 <form method="POST">
     {% csrf_token %}
-    
     <span class="mouse_delete"><button type="submit">Excluir</button></span>
     <span class="mouse"><a href="{% url 'fornecedor_list' %}">Voltar</a></span>
 
