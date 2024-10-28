@@ -50,6 +50,7 @@ class Fornecedor(models.Model):
     transportadora_principal = models.CharField(max_length=300, blank=False, null=False)
     outras_informações = models.CharField(max_length=500, blank=True, null=True)
     outras_opcoes_de_contato = models.CharField(max_length=500, blank=True, null=True)
+    site = models.CharField(max_length=100, blank=True, null=True)
     data_cadastro = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
