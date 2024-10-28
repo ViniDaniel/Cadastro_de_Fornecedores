@@ -7,13 +7,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('todos', '0001_initial'),
+        ("todos", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='fornecedor',
-            name='cnpj',
-            field=models.CharField(max_length=14, validators=[django.core.validators.MinLengthValidator(14)]),
+            model_name="fornecedor",
+            name="cnpj",
+            field=models.CharField(
+                max_length=14,
+                validators=[django.core.validators.MinLengthValidator(14)],
+            ),
         ),
     ]

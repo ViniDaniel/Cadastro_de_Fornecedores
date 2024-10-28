@@ -19,16 +19,39 @@ from django.contrib import admin
 from django.urls import path
 from todos.views import (
     index,
-    FornecedorListView, 
-    FornecedorCreateView, 
-    FornecedorUpdateView, 
-    FornecedorDeleteView)
+    FornecedorListView,
+    FornecedorCreateView,
+    FornecedorUpdateView,
+    FornecedorDeleteView,
+    ProdutoCreateView,
+    ProdutoUpdateView,
+    ProdutoDeleteView,
+    ProdutosPorFornecedorListView,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index, name="index"),
     path("fornecedores", FornecedorListView.as_view(), name="fornecedor_list"),
-    path('create', FornecedorCreateView.as_view(), name='fornecedor_form'),
-    path('atualizar/<int:pk>/', FornecedorUpdateView.as_view(), name="fornecedor_update"),
-    path('deletar/<int:pk>/', FornecedorDeleteView.as_view(), name="fornecedor_delete"),
+    path("create", FornecedorCreateView.as_view(), name="fornecedor_form"),
+    path(
+        "atualizar/<int:pk>/", FornecedorUpdateView.as_view(), name="fornecedor_update"
+    ),
+    path("deletar/<int:pk>/", FornecedorDeleteView.as_view(), name="fornecedor_delete"),
+    path("produtos", ProdutoCreateView.as_view(), name="produtos_form"),
+    path(
+        "produtos/atualizar/<int:pk>/",
+        ProdutoUpdateView.as_view(),
+        name="produtos_update",
+    ),
+    path(
+        "produtos/deletar/<int:pk>/",
+        ProdutoDeleteView.as_view(),
+        name="produtos_delete",
+    ),
+    path(
+        "fornecedores/<int:fornecedor_id>/produtos/",
+        ProdutosPorFornecedorListView.as_view(),
+        name="produtos_por_fornecedor",
+    ),
 ]

@@ -22,12 +22,11 @@
                 <th>UF</th>
                 <th>Telefone</th>
                 <th>Email</th>
-                <th>Tipo de Produto</th>
-                <th>Sobre Produto</th>
                 <th>Transportadora Principal</th>
-                <th>Custo Médio de Compra</th>
                 <th>Outras Informações</th>
+                <th>Outras Opções de Contato</th>
                 <th>Data de Cadastro</th>
+                <th>Produtos</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -43,12 +42,15 @@
                 <td>{{ fornecedor.uf }}</td>
                 <td>{{ fornecedor.telefone }}</td>
                 <td>{{ fornecedor.email }}</td>
-                <td>{{ fornecedor.tipo_de_produto }}</td>
-                <td>{{ fornecedor.sobre_produto }}</td>
                 <td>{{ fornecedor.transportadora_principal }}</td>
-                <td>{{ fornecedor.custo_medio_de_compra }}</td>
                 <td>{{ fornecedor.outras_informacoes }}</td>
+                <td>{{ fornecedor.outras_opcoes_de_contato }}</td>
                 <td>{{ fornecedor.data_cadastro }}</td>
+                <td>
+                    <span class="mouse">
+                    <a href="{% url 'produtos_por_fornecedor' fornecedor.id %}">Ver Produtos</a>
+                        </span>
+                </td>
                 <td>
                     <span class="mouse">
                     <a href="{% url 'fornecedor_update' fornecedor.id %} ">Alterar</a> <br><br>

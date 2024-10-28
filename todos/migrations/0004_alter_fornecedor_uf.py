@@ -6,13 +6,45 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('todos', '0003_alter_fornecedor_telefone'),
+        ("todos", "0003_alter_fornecedor_telefone"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='fornecedor',
-            name='uf',
-            field=models.CharField(choices=[('AC', 'Acre'), ('AL', 'Alagoas'), ('AP', 'Amapá'), ('AM', 'Amazonas'), ('BA', 'Bahia'), ('CE', 'Ceará'), ('DF', 'Distrito Federal'), ('ES', 'Espírito Santo'), ('GO', 'Goiás'), ('MA', 'Maranhão'), ('MT', 'Mato Grosso'), ('MS', 'Mato Grosso do Sul'), ('MG', 'Minas Gerais'), ('PA', 'Pará'), ('PB', 'Paraíba'), ('PR', 'Paraná'), ('PE', 'Pernambuco'), ('PI', 'Piauí'), ('RJ', 'Rio de Janeiro'), ('RN', 'Rio Grande do Norte'), ('RS', 'Rio Grande do Sul'), ('RO', 'Rondônia'), ('RR', 'Roraima'), ('SC', 'Santa Catarina'), ('SP', 'São Paulo'), ('SE', 'Sergipe'), ('TO', 'Tocantins')], max_length=2, verbose_name='UF'),
+            model_name="fornecedor",
+            name="uf",
+            field=models.CharField(
+                choices=[
+                    ("AC", "Acre"),
+                    ("AL", "Alagoas"),
+                    ("AP", "Amapá"),
+                    ("AM", "Amazonas"),
+                    ("BA", "Bahia"),
+                    ("CE", "Ceará"),
+                    ("DF", "Distrito Federal"),
+                    ("ES", "Espírito Santo"),
+                    ("GO", "Goiás"),
+                    ("MA", "Maranhão"),
+                    ("MT", "Mato Grosso"),
+                    ("MS", "Mato Grosso do Sul"),
+                    ("MG", "Minas Gerais"),
+                    ("PA", "Pará"),
+                    ("PB", "Paraíba"),
+                    ("PR", "Paraná"),
+                    ("PE", "Pernambuco"),
+                    ("PI", "Piauí"),
+                    ("RJ", "Rio de Janeiro"),
+                    ("RN", "Rio Grande do Norte"),
+                    ("RS", "Rio Grande do Sul"),
+                    ("RO", "Rondônia"),
+                    ("RR", "Roraima"),
+                    ("SC", "Santa Catarina"),
+                    ("SP", "São Paulo"),
+                    ("SE", "Sergipe"),
+                    ("TO", "Tocantins"),
+                ],
+                max_length=2,
+                verbose_name="UF",
+            ),
         ),
     ]

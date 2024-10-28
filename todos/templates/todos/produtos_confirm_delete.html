@@ -1,0 +1,18 @@
+{% extends 'todos/base.html' %}
+
+{% block content%}
+{%  load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/delete.css' %}">
+
+<h1>Deseja excluir o produto <span class="nome">{{object.nome_do_produto}}</span>?</h1>
+
+
+<form method="POST">
+    {% csrf_token %}
+    <span class="mouse_delete"><button type="submit">Excluir</button></span>
+    <span class="mouse"><a href="{% url 'fornecedor_list' %}">Voltar</a></span>
+
+</form>
+
+{% endblock %}

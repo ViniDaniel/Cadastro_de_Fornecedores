@@ -1,0 +1,16 @@
+{% extends 'todos/base.html' %}
+
+
+{% block content %}
+{% load  static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fornecedor_form.css' %}">
+    <br>
+    <h1 style="text-align: center;"><b>{{titulo}}</b></h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+    <button type="reset">Cancelar</button>
+  </form>
+{% endblock %}
+
