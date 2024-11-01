@@ -33,7 +33,7 @@ class Fornecedor(models.Model):
         ("SE", "Sergipe"),
         ("TO", "Tocantins"),
     ]  # No UF_Choices, primeira parte é como salva, segunda parte é como aparece pro usuario
-    nome = models.CharField(max_length=200, blank=False, null=False)
+    nome = models.CharField(max_length=200, blank=False, null=False, verbose_name='Nome do Fornecedor')
     cnpj = models.CharField(
         max_length=14, blank=False, null=False, validators=[MinLengthValidator(14)]
     )
@@ -47,9 +47,9 @@ class Fornecedor(models.Model):
         max_length=15, blank=False, null=False, validators=[MinLengthValidator(11)]
     )
     email = models.EmailField(blank=False, null=False)
-    transportadora_principal = models.CharField(max_length=300, blank=False, null=False)
-    outras_informações = models.CharField(max_length=500, blank=True, null=True)
-    outras_opcoes_de_contato = models.CharField(max_length=500, blank=True, null=True)
+    transportadora_principal = models.CharField(max_length=300, blank=False, null=False, verbose_name='Transportatoda Principal')
+    outras_indormacoes = models.CharField(max_length=500, blank=True, null=True, verbose_name='Outras Informações')
+    outras_opcoes_de_contato = models.CharField(max_length=500, blank=True, null=True, verbose_name='Outras Opções de Contato')
     site = models.CharField(max_length=100, blank=True, null=True)
     data_cadastro = models.DateTimeField(auto_now_add=True)
 

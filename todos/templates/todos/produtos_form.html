@@ -10,7 +10,7 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Salvar</button>
-    <button type="reset">Cancelar</button>
+    <span class="am"><a href="{% url 'fornecedor_list' %}">Voltar</a></span>
   </form>
 {% endblock %}
 

@@ -35,7 +35,7 @@ input[type="text"], input[type="email"], input[type="number"], select {
 }
 
 /* Estilo dos botões */
-button[type="submit"], button[type="reset"] {
+button[type="submit"] {
     background-color: #4CAF50;
     color: white;
     padding: 10px 15px;
@@ -45,10 +45,19 @@ button[type="submit"], button[type="reset"] {
     cursor: pointer;
 }
 
-button[type="reset"] {
-    background-color: #f44336;
-}
+.am a {background-color: #da0c0c;
+    color: white;
+    text-decoration: none;
+    padding: 9px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;}
 
 button:hover {
+    opacity: 0.8;
+}
+
+.am a:hover {
     opacity: 0.8;
 }
