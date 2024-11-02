@@ -37,7 +37,7 @@ class Fornecedor(models.Model):
     cnpj = models.CharField(
         max_length=14, blank=False, null=False, validators=[MinLengthValidator(14)]
     )
-    endereco = models.CharField(max_length=500, blank=False, null=False)
+    endereco = models.CharField(max_length=500, blank=False, null=False, verbose_name ='Endereço')
     bairro = models.CharField(max_length=50, blank=False, null=False)
     cidade = models.CharField(max_length=50, blank=False, null=False)
     uf = models.CharField(
@@ -47,7 +47,7 @@ class Fornecedor(models.Model):
         max_length=15, blank=False, null=False, validators=[MinLengthValidator(11)]
     )
     email = models.EmailField(blank=False, null=False)
-    transportadora_principal = models.CharField(max_length=300, blank=False, null=False, verbose_name='Transportatoda Principal')
+    transportadora_principal = models.CharField(max_length=300, blank=False, null=False, verbose_name='Transportadora Principal')
     outras_indormacoes = models.CharField(max_length=500, blank=True, null=True, verbose_name='Outras Informações')
     outras_opcoes_de_contato = models.CharField(max_length=500, blank=True, null=True, verbose_name='Outras Opções de Contato')
     site = models.CharField(max_length=100, blank=True, null=True)
@@ -59,11 +59,11 @@ class Fornecedor(models.Model):
 
 class Produto(models.Model):
 
-    nome_do_produto = models.CharField(max_length=100, blank=False, null=False)
-    descricao = models.CharField(max_length=500, blank=False, null=False)
-    preco = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    nome_do_produto = models.CharField(max_length=100, blank=False, null=False, verbose_name='Nome do Produto')
+    descricao = models.CharField(max_length=500, blank=False, null=False, verbose_name = 'Descrição')
+    preco = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True, verbose_name='Preço')
     custo_medio_de_compra = models.DecimalField(
-        max_digits=10, decimal_places=2, blank=True, null=True
+        max_digits=10, decimal_places=2, blank=True, null=True, verbose_name='Custo Médio de Compra'
     )
     data_cadastro = models.DateTimeField(auto_now_add=True)
     fornecedor = models.ForeignKey(
