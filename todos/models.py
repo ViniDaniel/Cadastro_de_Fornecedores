@@ -48,7 +48,7 @@ class Fornecedor(models.Model):
     )
     email = models.EmailField(blank=False, null=False)
     transportadora_principal = models.CharField(max_length=300, blank=False, null=False, verbose_name='Transportadora Principal')
-    outras_indormacoes = models.CharField(max_length=500, blank=True, null=True, verbose_name='Outras Informações')
+    outras_informacoes = models.CharField(max_length=500, blank=True, null=True, verbose_name='Outras Informações')
     outras_opcoes_de_contato = models.CharField(max_length=500, blank=True, null=True, verbose_name='Outras Opções de Contato')
     site = models.CharField(max_length=100, blank=True, null=True)
     data_cadastro = models.DateTimeField(auto_now_add=True)
